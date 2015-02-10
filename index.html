@@ -6,13 +6,15 @@
     <meta name="description" content=" FILL ME IN ">
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
-
+	<!-- One of my optimizations was to move these references to the bottom of the
+		document and load them with JS so that they would not load until the rest
+		of the page is already loaded. -->
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
     <!--link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"-->
 
     <!--link href="css/style.css" rel="stylesheet"-->
 	
-	<!-- I'm going to inline the css right here. And this is the part I'm inlining: -->
+	<!-- I'm going to inline part of the css right here. And this is the part I'm inlining: -->
     <style type="text/css">
 html {
   font-size: 100%;
@@ -72,7 +74,8 @@ footer span { float: right; font-style: italic; }
       (function(w,g){w['GoogleAnalyticsObject']=g;
       w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
 
-      // TODO: replace with your Google Analytics profile ID.
+      //I don't actually have my own Google Analytics profile, so I've left this alone.
+	  // TODO: replace with your Google Analytics profile ID.
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
