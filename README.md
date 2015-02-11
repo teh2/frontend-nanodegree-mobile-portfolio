@@ -12,6 +12,7 @@ which is a horribly simple html page that points to the various versions of the 
 In order to make this code run, you'll need to
 * grab the code from the github repo
 * put it somewhere where your local web server can see it.
+
 Note: it doesn't run particularly well by just opening index.html locally in a browser, so I have included a small file next to index.html, called server.js, which contains the code  that I use locally to run it on a node.js server. If you are running node.js, fire up server.js under node, and go to http://localhost:3000/index.html. If you have a different preferred web server that you use locally, feel free to skip node.js and my simple server.js file.
 
 In the process of completing this project, I used numerous references. The most significant were:
