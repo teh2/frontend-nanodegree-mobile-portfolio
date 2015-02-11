@@ -8,6 +8,7 @@ which is a horribly simple html page that points to the various versions of the 
 1. [The original code](https://github.com/udacity/frontend-nanodegree-mobile-portfolio)
 1. [my intermediate code](https://github.com/udacity/frontend-nanodegree-mobile-portfolio) - after clean up, but before build.
 1. [my final code](https://github.com/udacity/frontend-nanodegree-mobile-portfolio/tree/master/build) - after migrating the whole thing to gulp to standardize building.
+1. [Final running version](https://teh2.github.io/Optimization/build/index.html) - this is the page to feed to Google's PageSpeed Insights!
  
 In order to make this code run, you'll need to
 * grab the code from the github repo
