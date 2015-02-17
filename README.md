@@ -6,7 +6,7 @@ Mobile Portfolio is a class project for the Udacity frontend nanodegree.
 * [Run it](#Run-it)
 * [The Project](#The-Project)
 * [References](#References)
-* [Original README](#Original-README)
+* [Original ReadMe](#Original-README)
 ----
 ##Run it
 If you just want to see it run, you can check it out at:
