@@ -7,8 +7,9 @@ Mobile Portfolio is a class project for the Udacity frontend nanodegree.
 * [The Project](#The-Project)
 * [References](#References)
 * [Original ReadMe](#Original-README)
+
 ----
-##Run it
+#Run it
 If you just want to see it run, you can check it out at:
 - https://teh2.github.io/Optimization/index.html
 which is a horribly simple html page that points to the various versions of the portfolio, with and without optimizations. For convenience, I'll list those versions here too:
@@ -23,7 +24,7 @@ In order to make this code run, you'll need to
 
 Note: it doesn't run particularly well by just opening index.html locally in a browser, so I have included a small file next to index.html, called server.js, which contains the code  that I use locally to run it on a node.js server. If you are running node.js, fire up server.js under node, and go to http://localhost:3000/index.html. If you have a different preferred web server that you use locally, feel free to skip node.js and my simple server.js file.
 ----
-##The Project
+#The Project
 The point of this project was to optimize the provided web site. There were several parts of the web site that needed optimizing:
 * the CRP (Critical Rendering Path) on the main index.html page needed modifications to achieve a PageSpeed score of at least 90.
   * Force Async loading of some of the JS code.
@@ -51,7 +52,7 @@ The point of this project was to optimize the provided web site. There were seve
 	* and several others that make things easier and more consistent.
   * take a look at gulpfile.js for some useful tips and tricks!
 ----
-##References
+#References
 In the process of completing this project, I used numerous references. The most significant were:
 * The original project code from the git repository at: https://github.com/udacity/frontend-nanodegree-mobile-portfolio
 * The chrome Canary version, for its developer tools:
@@ -79,7 +80,7 @@ In the process of completing this project, I used numerous references. The most 
   * late in the process, I needed a text replacement task: https://www.npmjs.com/package/gulp-replace
   * Which caused me to need some info about regular expressions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 ----
-##Original README
+#Original README
 The original version of this readme contained the following text:
 
 ## Website Performance Optimization portfolio project
