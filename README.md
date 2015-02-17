@@ -1,6 +1,4 @@
 #frontend-nanodegree-mobile-portfolio
-
-===============================
 Mobile Portfolio is a class project for the Udacity frontend nanodegree.
 
 ----
