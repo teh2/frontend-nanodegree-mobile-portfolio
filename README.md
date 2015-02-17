@@ -1,7 +1,14 @@
 frontend-nanodegree-mobile-portfolio
 ===============================
 Mobile Portfolio is a class project for the Udacity frontend nanodegree.
-
+----
+#Contents
+[Run it](#Run-it)
+[The Project](#The-Project)
+[References](#References)
+[Original README](#Original-README)
+----
+##Run it
 If you just want to see it run, you can check it out at:
 - https://teh2.github.io/Optimization/index.html
 which is a horribly simple html page that points to the various versions of the portfolio, with and without optimizations. For convenience, I'll list those versions here too:
@@ -15,7 +22,36 @@ In order to make this code run, you'll need to
 * put it somewhere where your local web server can see it.
 
 Note: it doesn't run particularly well by just opening index.html locally in a browser, so I have included a small file next to index.html, called server.js, which contains the code  that I use locally to run it on a node.js server. If you are running node.js, fire up server.js under node, and go to http://localhost:3000/index.html. If you have a different preferred web server that you use locally, feel free to skip node.js and my simple server.js file.
-
+----
+##The Project
+The point of this project was to optimize the provided web site. There were several parts of the web site that needed optimizing:
+* the CRP (Critical Rendering Path) on the main index.html page needed modifications to achieve a PageSpeed score of at least 90.
+  * Force Async loading of some of the JS code.
+  * Add Media=print to force the print related CSS to only load for printing.
+  * Inline the critical CSS and move the loading of the rest into a script so it loads after the initial page load.
+  * compress images to minimize bytes transferred.
+* Optimize the scrolling framerate on the Pizza.html page.
+  * This involves changing the JS code in the updatePositions function.
+  * What I did here was to pull the code out of the for loop that calculates the phase change amount for each of the five pizza positions and create a small list of those five amounts.
+  * Then I simply added the correct phase amount to each of the pizzas.
+  * Next, I determined that most of the pizzas were off the bottom of the visible page and so I tried doing a calculation to see if the pizza was visible or not, and then stopping the loop after the first pizza that was not visible.
+  * I tried several different methods of calculating visibility, and in all cases, on my machine, the results were actually slower than simply updating invisible pizza positions, so I put it back.
+* Optimize the time to resize the pizza images on the pizza.html page.
+  * This involves changing the JS code in the changePizzaSizes function.
+  * Originally, all of the code was inside the for loop, meaning it got executed once for each and every pizza image on the page.
+  * It's much faster to pull as much of the code out of the for loop as possible, and only update the actual image size inside the loop.
+  * I also tried various other changes, including changing out the querySelectorAll call for a getElementById call instead, but that actually turned out to be significantly slower on my system, so I put it back the way it was.
+* Optimize the overall site loading (content efficiency).
+  * For this, I used Gulp to automate the build process and standardize the optimizations
+  * gulp supplies countless building blocks that can be chained together to make modifications to the source files of your site. I used:
+    * uglify - compress JS files.
+	* minify-html - compress html files.
+	* minify-css - compress css files.
+	* image-optimization - compress images.
+	* and several others that make things easier and more consistent.
+  * take a look at gulpfile.js for some useful tips and tricks!
+----
+##References
 In the process of completing this project, I used numerous references. The most significant were:
 * The original project code from the git repository at: https://github.com/udacity/frontend-nanodegree-mobile-portfolio
 * The chrome Canary version, for its developer tools:
@@ -42,9 +78,8 @@ In the process of completing this project, I used numerous references. The most 
   * finding gulp packages at npm: https://www.npmjs.com
   * late in the process, I needed a text replacement task: https://www.npmjs.com/package/gulp-replace
   * Which caused me to need some info about regular expressions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
-
-
 ----
+##Original README
 The original version of this readme contained the following text:
 
 ## Website Performance Optimization portfolio project
