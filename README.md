@@ -36,13 +36,14 @@ The point of this project was to optimize the provided web site. There were seve
   * This involves changing the JS code in the updatePositions function.
   * What I did here was to pull the code out of the for loop that calculates the phase change amount for each of the five pizza positions and create a small list of those five amounts.
   * Then I simply added the correct phase amount to each of the pizzas.
-  * Next, I determined that most of the pizzas were off the bottom of the visible page and so I tried doing a calculation to see if the pizza was visible or not, and then stopping the loop after the first pizza that was not visible.
-  * I tried several different methods of calculating visibility, and in all cases, on my machine, the results were actually slower than simply updating invisible pizza positions, so I put it back.
+  * I also changed out the querySelectorAll call for an equivalent getElementsByClassName call, because it's faster.
+  * Next, I determined that most of the pizzas were off the bottom of the visible page and so I did a calculation to see if the pizza was visible or not, and then stopping the loop after the first pizza that was not visible.
 * Optimize the time to resize the pizza images on the pizza.html page.
   * This involves changing the JS code in the changePizzaSizes function.
   * Originally, all of the code was inside the for loop, meaning it got executed once for each and every pizza image on the page.
   * It's much faster to pull as much of the code out of the for loop as possible, and only update the actual image size inside the loop.
-  * I also tried various other changes, including changing out the querySelectorAll call for a getElementById call instead, but that actually turned out to be significantly slower on my system, so I put it back the way it was.
+  * I also changed out the querySelectorAll call for an equivalent getElementsByClassName call, because it's faster.
+  * unfortunately, I can't pull the same "short circuit" trick here as in the animated background image code, because these pizzas actually move up and down with the scrolling, and they all eventually become visible.
 * Optimize the overall site loading (content efficiency).
   * For this, I used Gulp to automate the build process and standardize the optimizations
   * gulp supplies countless building blocks that can be chained together to make modifications to the source files of your site. I used:
